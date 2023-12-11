@@ -90,6 +90,10 @@ export default function Session() {
 
     const [vurbozeReminder, setVurbozeReminder] = useState("click me (!?)")
 
+    if (sessionDetails) {
+        document.title = sessionDetails.title
+    }
+
     
     useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
