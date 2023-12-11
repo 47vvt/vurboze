@@ -36,29 +36,39 @@ export default function Signin() {
             
         <button className="btn" onClick={()=>document.getElementById('login_modal').showModal()}>login</button>
         <dialog id="login_modal" className="modal">
-            <div className="modal-box">
+            <div className="modal-box flex flex-col max-w-xs">
 
-                <h3 className="font-bold text-lg">login/signup</h3>
+                <h3 className="font-bold text-3xl">login/signup</h3>
                 <p className="py-4">sign in to autosave your pieces</p>
+                <hr className='opacity-25'/>
+                <div className='py-3 mx-auto'>
+                <button className="btn btn-wide" onClick={signInGoogle}>sign in w/google</button>
+                </div>
+                <hr className='opacity-25'/>
+                <div className='pt-3'>
                 <input 
                     type="text" 
                     placeholder="Email" 
                     className="input input-bordered w-full max-w-xs"
-                    onChange={(e) => setEmail(e.target.value)} />
+                    onChange={(e) => setEmail(e.target.value)} 
+                    disabled="disabled"
+                    />
+                    
                 <input 
                     type="password" 
                     placeholder="Password" 
                     className="input input-bordered w-full max-w-xs"
-                    onChange={(e) => setPassword(e.target.value)} /
-                    >
-                <button className="btn" onClick={signIn}>sign in</button>
-                <button className="btn" onClick={signUp}>sign up</button>
-                <button className="btn" onClick={signInGoogle}>sign in w/google</button>
+                    onChange={(e) => setPassword(e.target.value)} 
+                    disabled="disabled"
+                    />
+                <button className="btn" onClick={signIn} disabled="disabled">sign in</button>
+                <button className="btn" onClick={signUp} disabled="disabled">sign up</button>
 
                 <div className="modal-action">
                     <form method="dialog">
                         <button className="btn">Close</button>
                     </form>
+                </div>
                 </div>
             </div>
         </dialog>

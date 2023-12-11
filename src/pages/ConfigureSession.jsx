@@ -69,16 +69,19 @@ export default function ConfigureSession({ setSessionDetails, setPieceType }) {
             >session
         </button>
         <dialog id="session_config" className="modal">
-            <div className="modal-box">
+            <div className="modal-box max-w-xs">
 
-                <h3 className="font-bold text-lg pb-5">start a writing session</h3>
+                <h3 className="font-bold text-3xl pb-5">start session</h3>
 
                 {/* choose heading */}
+                <div className="pb-2">
                 <input 
                     type="text" 
                     placeholder="title" 
                     className="input input-bordered w-full max-w-xs" 
-                    onChange={(e) => setTitle(e.target.value)}/>
+                    onChange={(e) => setTitle(e.target.value)}
+                />
+                </div>
                 
                 {/* choose piece type */}
                 <select 
@@ -92,11 +95,11 @@ export default function ConfigureSession({ setSessionDetails, setPieceType }) {
                 </select>
 
                 {/* insert custom time */}
-                <div className="flex">
+                <div className="flex max-w-xs pt-2">
                     <input 
                         type="number" 
-                        placeholder="mins (default 10)" 
-                        className={`input input-bordered w-full max-w-xs ${minsChosen ? "" : "input-error"}`}
+                        placeholder="mins" 
+                        className={`input input-bordered w-full max-w-xs pr-1 ${minsChosen ? "" : "input-error"}`}
                         onChange={handleMins}
                         disabled={checked}/>
                     <input 
@@ -108,9 +111,9 @@ export default function ConfigureSession({ setSessionDetails, setPieceType }) {
                 </div>
                 
                 {/* untimed checkbox */}
-                <div className="form-control">
+                <div className="form-control max-w-xs">
                 <label className="label cursor-pointer">
-                    <span className="label-text">Untimed</span> 
+                    <span className="label-text">untimed</span> 
                     <input type="checkbox" defaultChecked={checked} onClick={Untimed} className="checkbox" />
                 </label>
                 </div>
