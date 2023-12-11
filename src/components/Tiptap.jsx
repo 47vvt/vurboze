@@ -8,6 +8,7 @@ import { setDoc, doc } from "firebase/firestore"
 import { Autosave } from "react-autosave"
 import { BubbleMenu, useEditor, EditorContent } from "@tiptap/react"
 import StarterKit from "@tiptap/starter-kit"
+import Link from "@tiptap/extension-link"
 
   
 export default function Tiptap({trackChanges, uid, title, ddmmyyyy, timechosen, setSavePending, setWordCount, pieceType, feedbackMode }) {
@@ -18,6 +19,7 @@ export default function Tiptap({trackChanges, uid, title, ddmmyyyy, timechosen, 
     StarterKit,
     Underline,
     CharacterCount,
+    Link,
   ]
   const [pieceContent, setPieceContent] = useState("")
   
